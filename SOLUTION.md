@@ -1,7 +1,7 @@
 # Exploring AWS Services Lab - Solution
 
-**Student Name:** [Your Name]  
-**Date Completed:** [Date]
+**Student Name:** Guangzheng Li
+**Date Completed:** 20/04/2026
 
 ---
 
@@ -10,28 +10,28 @@
 ### Part A: Service Discovery
 
 **EC2 (Compute):**
-- Purpose: [Your answer]
+- Purpose: EC2 provides resizable computing capacity in the cloud. It is used to run applications and host websites on virtual servers.
 - Screenshot: ![EC2 Dashboard](screenshots/console-navigation/ec2-dashboard.png)
 
 **S3 (Storage):**
-- Purpose: [Your answer]
+- Purpose: S3 is an object storage service. It is used for storing and retrieving any amount of data, such as images, videos, backups, and static website files.
 - Screenshot: ![S3 Dashboard](screenshots/console-navigation/s3-dashboard.png)
 
 **RDS (Database):**
-- Purpose: [Your answer]
+- Purpose: RDS is a managed service for relational databases. It simplifies the setup, operation, and scaling of databases like MySQL, PostgreSQL, and SQL Server.
 - Screenshot: ![RDS Dashboard](screenshots/console-navigation/rds-dashboard.png)
 
 **VPC (Networking):**
-- Purpose: [Your answer]
+- Purpose: VPC lets you provision a logically isolated section of the AWS Cloud. It is used to define and control a virtual network for your AWS resources.
 - Screenshot: ![VPC Dashboard](screenshots/console-navigation/vpc-dashboard.png)
 
 **IAM (Security):**
-- Purpose: [Your answer]
+- Purpose: IAM is used to securely manage access to AWS services and resources. It allows you to create users and groups, and use permissions to allow or deny their access.
 - Screenshot: ![IAM Dashboard](screenshots/console-navigation/iam-dashboard.png)
 
 ### Part B: Console Features
 
-**Lambda Category:** [Which category?]
+**Lambda Category:** AWS Lambda belongs primarily to the Serverless Computing category, specifically under the PaaS model.
 
 **Pinned Services:**
 ![S3 Pinned](screenshots/console-navigation/s3-pinned.png)
@@ -41,9 +41,9 @@
 
 **Region Selector:**
 ![Region Changed](screenshots/console-navigation/region-selector.png)
-- Original region: [region]
-- Changed to: [region]
-- Changed back: [Yes/No]
+- Original region: eu-central-1
+- Changed to: eu-west-1 
+- Changed back: Yes
 
 ---
 
@@ -53,42 +53,42 @@
 
 | Category | Services | Primary Use Case |
 |----------|----------|------------------|
-| Compute | [List 3-5 services] | [Use cases] |
-| Storage | [List 3-5 services] | [Use cases] |
-| Database | [List 3-5 services] | [Use cases] |
-| Networking | [List 3-5 services] | [Use cases] |
-| Security | [List 3-5 services] | [Use cases] |
-| Management | [List 3-5 services] | [Use cases] |
+| Compute | EC2, Lambda, Elastic Beanstalk | Running applications |
+| Storage | S3, EBS, EFS | Storing data |
+| Database | RDS, DynamoDB, ElastiCache | Managing data |
+| Networking | VPC, CloudFront, Route 53 | Connecting resources |
+| Security | IAM, KMS, CloudTrail | Securing resources |
+| Management | CloudWatch, CloudFormation, Systems Manager | Monitoring & automation |
 
 ### Research Question Answers:
 
 **1. What's the difference between EC2 and Lambda?**
 
-[Your answer]
+EC2 is a virtual server you manage 24/7, while Lambda is serverless code that only runs (and costs money) when triggered.
 
 ---
 
 **2. When would you use S3 vs EBS?**
 
-[Your answer]
+Use S3 for internet-accessible files like images and backups, and use EBS as the high-speed "hard drive" attached to an EC2 instance.
 
 ---
 
 **3. What's the difference between RDS and DynamoDB?**
 
-[Your answer]
+RDS is for structured, relational data (SQL), whereas DynamoDB is a fast, flexible NoSQL database for massive scale.
 
 ---
 
 **4. Why do you need a VPC?**
 
-[Your answer]
+A VPC provides a secure, isolated private network to host your resources and control their access to the internet.
 
 ---
 
 **5. What does CloudWatch monitor?**
 
-[Your answer]
+CloudWatch monitors the health and performance metrics of AWS resources, such as CPU usage, network traffic, and billing alarms.
 
 ---
 
@@ -96,12 +96,16 @@
 
 ### CLI Version:
 ```
-[Paste output of: aws --version]
+aws-cli/2.34.29 Python/3.14.3 Linux/6.17.0-20-generic exe/x86_64.ubuntu.24
 ```
 
 ### Configuration:
 ```
-[Paste output of: aws configure list]
+NAME       : VALUE                    : TYPE             : LOCATION
+profile    : <not set>                : None             : None
+access_key : ****************ND5R     : shared-credentials-file :
+secret_key : ****************mPJc     : shared-credentials-file :
+region     : eu-central-1             : config-file      : ~/.aws/config
 ```
 
 ### CLI Outputs:
@@ -109,9 +113,9 @@
 See attached `cli-outputs.txt` file for all command outputs.
 
 **Key findings:**
-- My AWS Account ID: [account-id]
-- Default region: [region]
-- Number of regions available: [number]
+- My AWS Account ID: 047612973365
+- Default region: eu-central-1  
+- Number of regions available: 99
 
 ---
 
@@ -120,31 +124,31 @@ See attached `cli-outputs.txt` file for all command outputs.
 ### Pricing Worksheet:
 
 **1. EC2 t3.micro (Linux, us-east-1):**
-- On-Demand: $______ per hour
-- Monthly (730 hours): $______
-- Free Tier eligible: [Yes/No]
-- Free Tier details: [hours/month free]
+- On-Demand: $0.0104 per hour
+- Monthly (730 hours): $7.592
+- Free Tier eligible: Yes
+- Free Tier details: 750/month free
 
 **2. S3 Standard Storage:**
-- 100 GB monthly cost: $______
-- Free Tier: First ___ GB free for 12 months
-- Cost per GB: $______
+- 100 GB monthly cost: $2.19
+- Free Tier: First 5 GB free for 12 months
+- Cost per GB: $0.023
 
 **3. RDS db.t3.micro (MySQL):**
-- Monthly cost: $______
-- Storage (20 GB): $______
-- Total: $______
-- Free Tier eligible: [Yes/No]
+- Monthly cost: $0.00 (covered by Free Tier)
+- Storage (20 GB): $0.00 (covered by Free Tier)
+- Total: $0.00 (covered by Free Tier)
+- Free Tier eligible: Yes
 
 **4. Data Transfer OUT:**
-- 100 GB cost: $______
-- First ___ GB free per month
+- 100 GB cost: $8.91 First 1 GB: Free Remaining 99 GB: $0.09 per GB = $8.91
+- First 1 GB free per month
 
 ### AWS Pricing Calculator Estimate:
 
 ![Pricing Calculator](screenshots/pricing-calculator.png)
 
-**Estimate Link:** [Paste your estimate link here]
+**Estimate Link:** https://us-east-1.console.aws.amazon.com/costmanagement/home#/pricing-calculator/saved-estimates
 
 **Total Estimated Monthly Cost:** $______
 
@@ -153,76 +157,80 @@ See attached `cli-outputs.txt` file for all command outputs.
 ## Exercise 5: Documentation Hunt
 
 ### EC2 Instance Types:
-- Documentation URL: [URL]
-- t3.medium vCPUs: ______
-- t3.medium memory: ______ GB
+- Documentation URL: https://aws.amazon.com/ec2/instance-types/
+- t3.medium vCPUs: 2
+- t3.medium memory: 4 GB
 
 ### S3 Storage Classes:
-- Documentation URL: [URL]
+- Documentation URL: [\[URL\]](https://aws.amazon.com/s3/storage-classes/)
 - All storage classes:
-  1. [Class name]
-  2. [Class name]
-  3. [Class name]
-  4. [Etc...]
-- Cheapest for archive: [Class name]
+  1. S3 Standard
+  2. S3 Intelligent-Tiering
+  3. S3 Standard-IA (Infrequent Access)
+  4. S3 One Zone-IA
+  5. S3 Glacier Instant Retrieval
+  6. S3 Glacier Flexible Retrieval
+  7. S3 Glacier Deep Archive
+  8. S3 Outposts
+- Cheapest for archive: S3 Glacier Deep Archive
 
 ### IAM Best Practices:
-- Documentation URL: [URL]
+- Documentation URL: [\[URL\]](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 - Three best practices:
-  1. [Practice]
-  2. [Practice]
-  3. [Practice]
+  1. Lock away your AWS account root user access key
+  2. Require MFA
+  3. Grant least privilege
 
 ### Free Tier Limits:
-- Documentation URL: [URL]
-- EC2 t2.micro hours/month: ______
-- S3 storage free: ______ GB
+- Documentation URL: [\[URL\]](https://aws.amazon.com/free/)
+- EC2 t2.micro hours/month: 750 hours
+- S3 storage free: 5 GB
 
 ---
 
 ## Exercise 6: Regions and Availability Zones
 
 ### Your Current Region:
-- Region Name: [e.g., US East (N. Virginia)]
-- Region Code: [e.g., us-east-1]
-- Number of AZs: ______
+- Region Name: Frankfurt
+- Region Code: eu-central-1
+- Number of AZs: 3
 
 ### Concept Questions:
 
 **What is the difference between a Region and an Availability Zone?**
 
-[Your answer]
+A Region is a physical geographic location (like Frankfurt), while an Availability Zone (AZ) is one or more discrete data centers within that region.
 
 ---
 
 **Why does AWS have multiple regions?**
 
-[Your answer]
+Multiple regions allow customers to reduce latency by being closer to users, and to comply with local data residency laws.
 
 ---
 
 **How many Availability Zones does each region typically have?**
 
-[Your answer]
+Each AWS Region has a minimum of 3 Availability Zones to ensure high availability and fault tolerance.
 
 ---
 
 **Can you deploy resources in multiple regions simultaneously?**
 
-[Your answer]
+Yes. You can use tools like CloudFormation or Terraform to deploy identical resources across multiple regions for global redundancy.
 
 ---
+
 
 ### Region Selection Analysis:
 
 | Scenario | Best Region | Reasoning |
 |----------|-------------|-----------|
-| Serving users primarily in Europe | [region] | [Your reasoning] |
-| Lowest cost for non-critical workloads | [region] | [Your reasoning] |
-| GDPR compliance required | [region] | [Your reasoning] |
-| Serving users in Asia-Pacific | [region] | [Your reasoning] |
-| Need newest AWS services | [region] | [Your reasoning] |
-
+| Serving users primarily in Europe | eu-central-1 (Frankfurt) | Minimizes latency for European users due to physical proximity.
+| Lowest cost for non-critical workloads | us-east-1 (N. Virginia) | Typically offers the lowest pricing for most AWS services. |
+| GDPR compliance required | eu-central-1 (Frankfurt) | Ensures data is stored within the EU to meet data residency laws. |
+| Serving users in Asia-Pacific | ap-northeast-1 (Tokyo) | Provides a high-performance hub to reach major markets in Asia. |
+| Need newest AWS services | us-east-1 (N. Virginia) | This is often the first region to receive new service launches and updates. |
 ---
 
 ## Bonus Challenges
